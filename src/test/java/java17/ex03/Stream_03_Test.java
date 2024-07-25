@@ -34,6 +34,8 @@ public class Stream_03_Test {
                                                                .mapToDouble(Pizza::getPrice) // Mappe chaque pizza à son prix
                                                                .sum())); // Calcule la somme des prix des pizzas pour chaque commande
 
+		//Optional<Order> result = orders.stream().max(Comparator.comparing(Order::getPrice);
+		
 		assertThat(result.isPresent(), is(true));
 		assertThat(result.get().getPrice(), is(2200.0));
 	}
