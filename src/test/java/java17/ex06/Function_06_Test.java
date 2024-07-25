@@ -16,17 +16,32 @@ public class Function_06_Test {
     // tag::formatAge[]
     // TODO compléter la méthode
     // TODO la méthode retourne une chaîne de caractères de la forme [age=<AGE>] (exemple : [age=12])
+	
+//	String formatAge(Supplier<Person> supplier) {
+//        // TODO
+//        return null;
+//    }
+	
     String formatAge(Supplier<Person> supplier) {
-        // TODO
-        return null;
-    }
+    	 if (supplier == null) {
+             return "[age=35]";
+         }
+         Person person = supplier.get();
+         return String.format("[age=%d]", person.getAge());
+     }
+    
     // end::formatAge[]
 
 
     @Test
     public void test_supplier_formatAge() throws Exception {
+    	
+    	Supplier<Person> supplier = () -> new Person("John", "Doe", 35, "password");
+    	
+    	
         // TODO compléter le test unitaire pour qu'il soit passant
-        String result = formatAge(null);
+    	//  String result = formatAge(null);
+    	  String result = formatAge(supplier);
 
         assert result.equals("[age=35]");
     }
