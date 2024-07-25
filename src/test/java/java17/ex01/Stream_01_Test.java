@@ -31,8 +31,8 @@ public class Stream_01_Test {
 		// TODO récupérer la liste des pizzas dont le prix est >= 1300
 		 //List<Pizza> result = null
 		 List<Pizza> result = pizzas.stream()
-                 .filter(pizza -> pizza.getPrice() >= 1300)
-                 .collect(Collectors.toList());
+                 .filter(pizza -> pizza.getPrice() >= 1300).toList();
+                 
 		
 		
 

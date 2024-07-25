@@ -27,8 +27,8 @@ public class Stream_02_Test {
 
 		// TODO Trouver la liste des clients associés aux commandes
 		//List<Customer> result = null;
-		List<Customer> result = orders.stream().map(Order::getCustomer) // Mappe chaque commande à son client
-                .collect(Collectors.toList()); // Collecte les clients dans une liste
+		List<Customer> result = orders.stream().map(Order::getCustomer).toList(); // Mappe chaque commande à son client
+                // Collecte les clients dans une liste
 		
 
 		assertThat(result, hasSize(8));
@@ -53,8 +53,8 @@ public class Stream_02_Test {
 
 		// TODO Trouver la liste des différents clients associés aux commandes (sans doublon)
 		//List<Customer> result = null;
-		List<Customer> result = orders.stream().map(Order::getCustomer).distinct() // Mappe chaque commande à son client
-                .collect(Collectors.toList());
+		List<Customer> result = orders.stream().map(Order::getCustomer).distinct().toList(); // Mappe chaque commande à son client
+               
 		
 
 		assertThat(result, hasSize(2));
